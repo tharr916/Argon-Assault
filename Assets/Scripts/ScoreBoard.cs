@@ -19,6 +19,7 @@ public class ScoreBoard : MonoBehaviour
 
     public void ScoreHit(int pointsPerEnemy)
     {
+        // Test Change C
         _score = _score += pointsPerEnemy;
         _scoreText.text = _score.ToString();
 
