@@ -74,9 +74,19 @@ public class Player : MonoBehaviour {
 		ProcessRotation();
 	}
 
-	#endregion
-	#region Gameplay Methods
-	private void ProcessTranslation()
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("You hit me.   You fucking HIT me.");
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        print("You triggered me.   You fucking TRIGGERED me.");
+    }
+
+    #endregion
+    #region Gameplay Methods
+    private void ProcessTranslation()
 	{
 		// grab the user input values
 		xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
