@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CollisionHandler : MonoBehaviour {
 
-    #region lifecycle methods
-    // Use this for initialization
-    void Start () {
+	#region lifecycle methods
+	// Use this for initialization
+	void Start () {
 		
 	}
 	
@@ -14,10 +14,18 @@ public class CollisionHandler : MonoBehaviour {
 	void Update () {
 		
 	}
-    #endregion
+	#endregion
 
-    private void OnTriggerEnter(Collider collider)
+	private void OnTriggerEnter(Collider collider)
     {
-        print("You triggered me.   You fucking TRIGGERED me.");
+        StartDeathSequence();
+    }
+
+    private void StartDeathSequence()
+    {
+        // disable controls
+        print("player dying");
+
+        SendMessage("OnPlayerDeath");
     }
 }

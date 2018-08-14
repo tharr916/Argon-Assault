@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour {
 	[SerializeField] float controlRollFactor = -20f;
 
 	private float xThrow, yThrow = 0f;
+    private bool isControlEnabled = true;
 	
 	#endregion
 	#region lifecycle methods
@@ -64,10 +65,20 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		ProcessTranslation();
-		ProcessRotation();
+	    if (isControlEnabled)
+	    {
+	        ProcessTranslation();
+	        ProcessRotation();
+        }
+		
 	}
 
+    // NOTE - called by string reference
+    void OnPlayerDeath()
+    {
+        print("freeze controls");
+        isControlEnabled = false;
+    }
 	#endregion
 	#region Gameplay Methods
 
