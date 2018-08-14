@@ -69,6 +69,8 @@ public class PlayerController : MonoBehaviour {
         }
 		
 	}
+    #endregion
+    #region Gameplay Methods
 
     // NOTE - called by string reference
     void OnPlayerDeath()
@@ -76,10 +78,8 @@ public class PlayerController : MonoBehaviour {
         // freeze controls
         isControlEnabled = false;
     }
-	#endregion
-	#region Gameplay Methods
 
-	private void ProcessTranslation()
+    private void ProcessTranslation()
 	{
 		// grab the user input values
 		xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
