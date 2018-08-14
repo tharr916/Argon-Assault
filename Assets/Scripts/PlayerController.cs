@@ -6,11 +6,8 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour {
 
-	#region cached components
-
-
-
-	#endregion
+    // TODO work out why sometimes slow on first play of scene
+	
 	#region configuration
 
     [Header("General")]
@@ -76,7 +73,7 @@ public class PlayerController : MonoBehaviour {
     // NOTE - called by string reference
     void OnPlayerDeath()
     {
-        print("freeze controls");
+        // freeze controls
         isControlEnabled = false;
     }
 	#endregion

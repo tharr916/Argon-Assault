@@ -1,8 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class CollisionHandler : MonoBehaviour {
+public class CollisionHandler : MonoBehaviour
+{
+
+    [Tooltip("In seconds")][SerializeField] private float levelLoadDelay = 1f;
+    [Tooltip("FX prefab on player")][SerializeField] private GameObject deathFx;
 
 	#region lifecycle methods
 	// Use this for initialization
@@ -17,15 +24,22 @@ public class CollisionHandler : MonoBehaviour {
 	#endregion
 
 	private void OnTriggerEnter(Collider collider)
+	{
+		StartDeathSequence();
+        deathFx.SetActive(true);
+	    Invoke("ReloadScene", levelLoadDelay); // string reference
+    }
+
+    private void ReloadScene() // string reference
     {
-        StartDeathSequence();
+        SceneManager.LoadScene(1);
     }
 
     private void StartDeathSequence()
-    {
-        // disable controls
-        print("player dying");
+	{
+		// disable controls
+		print("player dying");
+		SendMessage("OnPlayerDeath");
 
-        SendMessage("OnPlayerDeath");
-    }
+	}
 }
