@@ -4,7 +4,7 @@ using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Player : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
 	#region cached components
 
@@ -13,52 +13,46 @@ public class Player : MonoBehaviour {
 	#endregion
 	#region configuration
 
+    [Header("General")]
 	/// <summary>
 	/// The speed the ship moves in the horizontal/X axis
 	/// </summary>
 	[Tooltip("In ms^-1")][SerializeField] private float xSpeed = 6f;
-
-	/// <summary>
+    /// <summary>
 	/// The speed the ship moves in the vertical/Y
 	/// </summary>
 	[Tooltip("In ms^-1")][SerializeField] private float ySpeed = 5f;
-	
 	/// <summary>
 	/// The range the ship can move to the sides of the screen (the x offset range from the main camera path)
 	/// </summary>
 	[Tooltip("In meters")][SerializeField] private float xRange = 5f;
-
-	/// <summary>
+    /// <summary>
 	/// The range the ship can move to the vertical extents of the screen (the Y offset range from the main camera path) 
 	/// </summary>
 	[Tooltip("In meters")][SerializeField] private float yRange = 3.5f;
 
-	/// <summary>
+    [Header("Screeb-position based")]
+    /// <summary>
 	/// relates the vertical position to the pitch
 	/// </summary>
 	[SerializeField] float positionPitchFactor = -5f;
-
-	/// <summary>
+    /// <summary>
 	/// relates the vertical position to the yaw
 	/// </summary>
 	[SerializeField] float positionYawFactor = 5f;
 	
-	/// <summary>
-	/// relates the vertical throw to the pitch
-	/// </summary>
-	[SerializeField] float controlPitchFactor = -20f;
-
-	/// <summary>
+    [Header("Control-throw Based")]
+    /// <summary>
+    /// relates the vertical throw to the pitch
+    /// </summary>
+    [SerializeField] float controlPitchFactor = -20f;
+    /// <summary>
 	/// relates the horizontal throw to the roll
 	/// </summary>
 	[SerializeField] float controlRollFactor = -20f;
 
 	private float xThrow, yThrow = 0f;
 	
-	#endregion
-	#region state
-
-
 	#endregion
 	#region lifecycle methods
 
@@ -74,19 +68,10 @@ public class Player : MonoBehaviour {
 		ProcessRotation();
 	}
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        print("You hit me.   You fucking HIT me.");
-    }
+	#endregion
+	#region Gameplay Methods
 
-    private void OnTriggerEnter(Collider collider)
-    {
-        print("You triggered me.   You fucking TRIGGERED me.");
-    }
-
-    #endregion
-    #region Gameplay Methods
-    private void ProcessTranslation()
+	private void ProcessTranslation()
 	{
 		// grab the user input values
 		xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
