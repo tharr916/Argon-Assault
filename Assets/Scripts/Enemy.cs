@@ -9,7 +9,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject deathFX;
     [SerializeField] private Transform parent;
     [SerializeField] int scorePerHit = 12;
-    [SerializeField] private int hits = 10;
+    [SerializeField] int scorePerDeath = 100;
+    [SerializeField] private int hits = 6;
 
     private ScoreBoard _scoreBoard;
 
@@ -39,6 +40,7 @@ public class Enemy : MonoBehaviour
     {
         GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
         fx.transform.parent = parent;
+        _scoreBoard.ScoreHit(scorePerDeath);
         Destroy(gameObject);
     }
 
