@@ -139,8 +139,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 27735142}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 142.8, y: -203.8, z: 415}
-  m_LocalScale: {x: 30.593855, y: 10, z: 205.12373}
+  m_LocalPosition: {x: 142.8, y: -203, z: 415}
+  m_LocalScale: {x: 30.593855, y: 14.77, z: 205.12373}
   m_Children: []
   m_Father: {fileID: 1020013508}
   m_RootOrder: 1
@@ -218,6 +218,7 @@ MonoBehaviour:
   deathFX: {fileID: 1103170085825420, guid: 2096640f13b7d854a8f4fc4426cbcd9d, type: 2}
   parent: {fileID: 1802576006}
   scorePerHit: 12
+  hits: 10
 --- !u!4 &66507805 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4789027529064206, guid: 9e0237c003d73704a89f6309584eecb5,
@@ -468,6 +469,7 @@ MonoBehaviour:
   deathFX: {fileID: 1103170085825420, guid: 2096640f13b7d854a8f4fc4426cbcd9d, type: 2}
   parent: {fileID: 1802576006}
   scorePerHit: 12
+  hits: 10
 --- !u!1 &429691530 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1348315497375842, guid: 9e0237c003d73704a89f6309584eecb5,
@@ -767,6 +769,7 @@ MonoBehaviour:
   deathFX: {fileID: 1103170085825420, guid: 2096640f13b7d854a8f4fc4426cbcd9d, type: 2}
   parent: {fileID: 1802576006}
   scorePerHit: 12
+  hits: 10
 --- !u!1 &686764257 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1089472890233586, guid: 0ef9b05c2cf686543a6fa365c9d32381,
@@ -786,6 +789,7 @@ MonoBehaviour:
   deathFX: {fileID: 1103170085825420, guid: 2096640f13b7d854a8f4fc4426cbcd9d, type: 2}
   parent: {fileID: 1802576006}
   scorePerHit: 12
+  hits: 10
 --- !u!1001 &710160946
 Prefab:
   m_ObjectHideFlags: 0
@@ -995,6 +999,7 @@ MonoBehaviour:
   deathFX: {fileID: 1103170085825420, guid: 2096640f13b7d854a8f4fc4426cbcd9d, type: 2}
   parent: {fileID: 1802576006}
   scorePerHit: 12
+  hits: 10
 --- !u!1001 &852471451
 Prefab:
   m_ObjectHideFlags: 0
@@ -1256,6 +1261,7 @@ MonoBehaviour:
   deathFX: {fileID: 1103170085825420, guid: 2096640f13b7d854a8f4fc4426cbcd9d, type: 2}
   parent: {fileID: 1802576006}
   scorePerHit: 12
+  hits: 10
 --- !u!1 &1009466953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,6 +1541,7 @@ MonoBehaviour:
   deathFX: {fileID: 1103170085825420, guid: 2096640f13b7d854a8f4fc4426cbcd9d, type: 2}
   parent: {fileID: 1802576006}
   scorePerHit: 12
+  hits: 10
 --- !u!4 &1419975653 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4626070094711116, guid: 0ef9b05c2cf686543a6fa365c9d32381,
@@ -1583,6 +1590,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 11.014533
       objectReference: {fileID: 0}
+    - target: {fileID: 23857377876366892, guid: 7487ad9fae6be8e479579426615a9d80,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d08ed66cecec594ca14bdd5920c5a55, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7487ad9fae6be8e479579426615a9d80, type: 2}
   m_IsPrefabAsset: 0
