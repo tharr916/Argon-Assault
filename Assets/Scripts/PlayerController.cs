@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using UnityEngine;
@@ -48,7 +49,14 @@ public class PlayerController : MonoBehaviour {
 	/// </summary>
 	[SerializeField] float controlRollFactor = -20f;
 
-	private float xThrow, yThrow = 0f;
+
+    [Header("The ship's guns")]
+    /// <summary>
+    /// relates the vertical throw to the pitch
+    /// </summary>
+    [SerializeField] GameObject[] guns;
+
+    private float xThrow, yThrow = 0f;
     private bool isControlEnabled = true;
 	
 	#endregion
@@ -66,6 +74,7 @@ public class PlayerController : MonoBehaviour {
 	    {
 	        ProcessTranslation();
 	        ProcessRotation();
+            ProcessFiring();
         }
 		
 	}
@@ -115,5 +124,33 @@ public class PlayerController : MonoBehaviour {
 		// apply the rotation to the game object
 		transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
 	}
-	#endregion
+
+    void ProcessFiring()
+    {
+        if (CrossPlatformInputManager.GetButton("Fire"))
+        {
+            ActivateGuns();
+        }
+        else
+        {
+            DeactivateGuns();
+        }
+    }
+
+    private void DeactivateGuns()
+    {
+        foreach (var gun in guns)
+        {
+            gun.active = false;
+        }
+    }
+
+    private void ActivateGuns()
+    {
+        foreach (var gun in guns)
+        {
+            gun.active = true;
+        }
+    }
+    #endregion
 }
