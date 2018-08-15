@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23777802302623594}
   - component: {fileID: 65319046990140838}
   m_Layer: 0
-  m_Name: Blue Enemy
+  m_Name: Eagle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

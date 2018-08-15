@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23830240081644464}
   - component: {fileID: 65887980515781914}
   m_Layer: 0
-  m_Name: Red Enemy
+  m_Name: Bomber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

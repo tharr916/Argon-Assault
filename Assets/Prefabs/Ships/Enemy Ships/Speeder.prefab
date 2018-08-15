@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23032155526176990}
   - component: {fileID: 65076854733351902}
   m_Layer: 0
-  m_Name: Grey Enemy
+  m_Name: Speeder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
