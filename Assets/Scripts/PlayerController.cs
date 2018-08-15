@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour {
     {
         foreach (var gun in guns)
         {
-            gun.active = false;
+            gun.SetActive(false);
         }
     }
 
@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour {
     {
         foreach (var gun in guns)
         {
-            gun.active = true;
+            gun.SetActive(true);
         }
     }
     #endregion
